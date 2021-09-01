@@ -6,11 +6,13 @@ const getCountry = () =>{
     fetch(url)
     .then(res => res.json())
     .then(data => loadCountry(data[0]))
+    searchField.value = ' ';
 }
 
 const loadCountry = (data) =>{
     console.log(data)
     const countryContainer = document.getElementById('country-container');
+    countryContainer.textContent = ' ';
     const countryDiv = document.createElement('div');
     countryDiv.classList.add('country-details');
     countryDiv.innerHTML = `
